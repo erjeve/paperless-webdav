@@ -208,8 +208,7 @@ class TestCreateWebdavApp:
                 paperless_url="http://paperless.test",
                 share_loader=lambda: {},
             )
-
-        status, headers, body = self._call_wsgi(app, "PROPFIND")
+            status, headers, body = self._call_wsgi(app, "PROPFIND")
 
         assert status.startswith("207 ")
         assert headers["Content-Type"].startswith("application/xml")
@@ -226,8 +225,7 @@ class TestCreateWebdavApp:
                 paperless_url="http://paperless.test",
                 share_loader=lambda: {},
             )
-
-        status, headers, body = self._call_wsgi(app, "OPTIONS")
+            status, headers, body = self._call_wsgi(app, "OPTIONS")
 
         assert status.startswith("200 ")
         assert "PROPFIND" in headers["Allow"]
